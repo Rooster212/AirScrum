@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ScrumTool.Database.Project>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="project-summary-box">
+            <h3>@item.Name</h3>
+            <a href="/Project/ProjectBacklog/@Html.Raw(item.ID)"><h4>@item.BacklogItems.Count Backlog Items</h4></a>
+            <h4>@item.Sprints.Count Sprints</h4>
+        </div>
+    }
+</div>

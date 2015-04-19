@@ -1,0 +1,52 @@
+﻿@model ScrumTool.Database.Team
+
+<div id="manage-user-page">
+    <h3>
+        User Management
+    </h3>
+    <div id="help-area">
+        <h4><span class="fa fa-question-circle"></span>Manage the teams by dragging and dropping the users into the correct column</h4>
+    </div>
+    <div id="manage-user-drag-area">
+        <div class="manage-user-team-area" id="manage-user-assigned-team">
+            <h4>Users in group</h4>
+            @foreach (var item in Model.Users) // List<AspNetUser>
+            {
+                <div class="user-container">
+                    @item.UserName
+                </div>
+            }
+        </div>
+        <div class="manage-user-team-area" id="manage-user-not-assigned-team">
+            <h4>Available other users</h4>
+            @foreach (var item in ViewBag.AllOtherUsers) // List<AspNetUser>
+            {
+                <div class="user-container">
+                    @item.UserName
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".user-container").draggable({
+        appendTo: "body",
+        revert: "invalid",
+        containment: "document",
+        cursor: "move"
+    });
+
+    $(".manage-user-team-area").droppable({
+        accept: ".user-container",
+        tolerance: "pointer",
+        greedy: true,
+        activeClass: "custom-state-active",
+        hoverClass: "ui-state-highlight",
+        drop: function (event, ui) {
+            var $draggable = ui.draggable;
+            $draggable.detach().css({ top: 0, left: 0 }).appendTo(event.target);
+            $(document).remove($draggable);
+        }
+    });
+</script>

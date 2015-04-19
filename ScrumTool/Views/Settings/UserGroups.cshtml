@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Layout = null;
+}
+
+@model ScrumTool.Objects.UserManage
+
+<div id="manage-user-page">
+    <h3>
+        User Management
+    </h3>
+    <div id="help-area">
+        <h4><span class="fa fa-question-circle"></span>Manage the user roles by dragging and dropping the users into the correct column</h4>
+    </div>
+    <div id="manage-user-drag-area">
+        <div class="manage-user-role-area" id="manage-user-assigned-role">
+            <h4>User is in roles</h4>
+            @foreach (var item in Model.AssignedRoles)
+            {
+                <div class="role-container">
+                    @item
+                </div>
+            }
+        </div>
+        <div class="manage-user-role-area" id="manage-user-not-assigned-role">
+            <h4>Available other roles</h4>
+            @foreach (var item in Model.NotAssignedRoles)
+            {
+                <div class="role-container">
+                    @item
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".role-container").draggable({
+        appendTo: "body",
+        revert: "invalid",
+        containment: "document",
+        cursor: "move"
+    });
+
+    $(".manage-user-role-area").droppable({
+        accept: ".role-container",
+        tolerance: "pointer",
+        greedy: true,
+        activeClass: "custom-state-active",
+        hoverClass: "ui-state-highlight",
+        drop: function (event, ui) {
+            var $draggable = ui.draggable;
+            $draggable.detach().css({ top: 0, left: 0 }).appendTo(event.target);
+            $(document).remove($draggable);
+        }
+    });
+</script>

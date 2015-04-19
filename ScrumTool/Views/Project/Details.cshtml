@@ -1,0 +1,125 @@
+﻿@model ScrumTool.Database.Project
+
+@{
+    ViewBag.Title = "Project Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Project Details</h2>
+
+<div>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<button class="btn btn-default" id="manage-assigned-project-teams" data-url="@Url.Action("TeamUserManage", new {projectId = Model.ID})" data-project-id="@Model.ID">
+    Manage Assigned Teams
+</button>
+<div>
+    <table data-toggle="table" data-classes="table table-condensed" data-striped="true">
+        <tr>
+            <td colspan="2">
+                <h3>Assigned Teams</h3>
+            </td>
+        </tr>
+        @if (Model.Teams.Count > 0)
+        {
+            <tr>
+                <td>
+                    Team Name
+                </td>
+                <td>
+                    Users
+                </td>
+            </tr>
+            foreach (var team in Model.Teams)
+             {
+                 <tr>
+                     <td>
+                         @team.Name
+                     </td>
+                     <td>
+                         <ul>
+                             @foreach (var user in ViewBag.TeamMembers[team.ID])
+                             {
+                                 <li>
+                                     @user
+                                 </li>
+                             }
+                         </ul>
+                     </td>
+                 </tr>
+             }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">
+                    <h4>No assigned teams</h4>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="2">
+                <h3>Assigned Users</h3>
+            </td>
+        </tr>
+        @if (Model.Users.Count > 0)
+        {
+            
+            <tr>
+                <td>
+                    User Name
+                </td>
+                <td>
+                    Roles
+                </td>
+            </tr>
+            foreach (var user in Model.Users)
+             {
+                 <tr>
+                     <td>
+                         @user.UserName
+                     </td>
+                     <td>
+                         <ul>
+                             @foreach (var role in ViewBag.TeamMemberRoles[user.Id])
+                             {
+                                 <li>
+                                     @role
+                                 </li>
+                             }
+                         </ul>
+                     </td>
+                 </tr>
+             }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">
+                    <h4>No assigned users</h4>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    
+    <table data-toggle="table" data-classes="table table-condensed" data-striped="true">
+        
+        
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {id = Model.ID}, new {@class = "btn btn-default"})
+    @Html.ActionLink("Back", "Index", new {}, new {@class = "btn btn-default"})
+</p>
+
+<script src="~/Scripts/ProjectDetails.js" type="text/javascript"></script>

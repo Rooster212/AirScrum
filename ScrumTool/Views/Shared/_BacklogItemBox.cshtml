@@ -1,0 +1,21 @@
+﻿@model ScrumTool.Objects.ProjectBacklogItem
+
+
+<div class="backlog-item" id="@Model.Id">
+    <div class="flipper">
+        <div class="front">
+            <h4 class="task-name">@Model.Name - @Html.Raw(Model.TaskCount) tasks</h4>
+            <br />
+            <p class="comment-para">@Model.Comments</p>
+        </div>
+        <div class="back">
+            <h4 class="task-name">@Model.Name - @Html.Raw(Model.TaskCount) tasks</h4>
+            <br/>
+            <div class="btn-group rear-btn-group">
+                <a class="rear-button rear-button-details btn btn-default" data-backlog-id="@Model.Id">Details</a>
+                <a class="rear-button rear-button-edit btn btn-default" data-backlog-id="@Model.Id">Edit</a>
+                <a class="rear-button rear-button-remove btn btn-danger" data-backlog-id="@Model.Id">Remove</a>
+            </div>
+        </div>
+    </div>
+</div>

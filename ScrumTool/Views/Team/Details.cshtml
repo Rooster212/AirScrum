@@ -1,0 +1,48 @@
+﻿@using ScrumTool.Database
+@using WebGrease.Css.Extensions
+@model ScrumTool.Database.Team
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Team Details - @Html.DisplayFor(model => model.Name)</h2>
+@Html.HiddenFor(team => team.ID, new{id="team-id"})
+
+<div class="btn-group btn-group-sm">
+    <button class="btn btn-default" id="manage-team-users" data-url="@Url.Action("Manage", new { team = Model.ID })" data-team-id="@Html.Raw(Model.ID)">Manage Team Users</button>
+    @Html.ActionLink("Edit", "Edit", new {id = Model.ID}, new {@class = "btn btn-default"})
+    @Html.ActionLink("Back to List", "Index", new {}, new {@class = "btn btn-default"})
+</div>
+<div id="team-user-list">
+    @if (ViewBag.teamUsers == null || ViewBag.teamUsers.Count == 0)
+    {
+        <h3>No users in team</h3>
+    }
+    else
+    {
+        <table data-toggle="table" data-classes="table table-condensed" data-striped="true">
+            <tr>
+                <td>Name</td>
+                <td>Role(s)</td>
+            </tr>
+            @foreach (var item in ViewBag.teamUsers)
+            {
+                <tr>
+                    <td>@item.UserName</td>
+                    <td>
+                        @foreach (var role in item.AspNetRoles)
+                        {
+                            Html.Raw(role.Name);
+                        }
+                </td>
+            </tr>
+            }
+        </table>
+    }
+    
+</div>
+
+<script type="text/javascript" src="~/Scripts/TeamDetails.js"></script>

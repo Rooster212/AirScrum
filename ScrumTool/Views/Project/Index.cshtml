@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ScrumTool.Database.Project>
+
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Projects</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create",new{},new {@class = "btn btn-default btn-sm"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr class="project-row">
+            <td class="project-name">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @*<div class="btn-group btn-group-sm">
+                    <button id="proj-drop-@Html.Raw(item.ID)" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Actions
+                        <span class="carat"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="proj-drop-@Html.Raw(item.ID)">
+                        <li role="presentation">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID, role = "menuitem", tabindex = "-1" })
+                        </li>
+                        <li role="presentation">
+                            @Html.ActionLink("Details", "Details", new { id = item.ID })
+                        </li>
+                        <li role="presentation">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </li>
+                    </ul>
+                </div>*@
+            
+                <div class="btn-group btn-group-sm">
+                    @Html.ActionLink("Backlog","ProjectBacklog","Project", new { id = @item.ID }, new { @class = "btn btn-default"})
+                    @Html.ActionLink("Board", "ProjectBoard", "Project", new { id = @item.ID }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Edit", "Edit", "Project", new { id = @item.ID }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Details", "Details", "Project", new { id = @item.ID }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Delete", "Delete", "Project", new { id = @item.ID }, new { @class = "btn btn-default" })
+                </div>
+            
+            </td>
+        </tr>
+    }
+</table>

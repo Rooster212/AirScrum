@@ -1,0 +1,62 @@
+﻿@using System.Net.Configuration
+@using ScrumTool.Database
+@model ScrumTool.Database.BacklogItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h4>Backlog Item Details - @Html.Raw(Model.Name)</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+    </dl>
+</div>
+<div class="btn-group btn-group-sm">
+    @Html.ActionLink("Project Backlog", "ProjectBacklog", "Project", new { id = Model.ProjectID }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Project Board", "ProjectBoard", "Project", new { id = Model.ProjectID }, new { @class = "btn btn-default" })
+</div>
+<br/><br/>
+
+<div class="btn-group btn-group-sm">
+    @Html.ActionLink("Edit Item", "Edit", new {id = Model.ID}, new {@class = "btn btn-default"})
+    @*@Html.ActionLink("Delete Item", "Remove", new { id = Model.ID }, new { @class = "btn btn-default" })*@
+    @Html.ActionLink("Add Task", "Create", "ScrumTask", new { id = Model.ID }, new { @class = "btn btn-default" })
+</div>
+<hr/>
+
+<h4>ScrumTask List</h4>
+@Html.Partial("_TaskListPartial", (List<ScrumTask>)ViewBag.BacklogItemTaskList)
+@Html.Partial("_MobileTaskListPartial", (List<ScrumTask>)ViewBag.BacklogItemTaskList)

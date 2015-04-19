@@ -1,0 +1,29 @@
+﻿@model ICollection<ScrumTool.Database.ScrumTask>
+<div id="task-list-large">
+    @if (Model.Count == 0)
+    {
+        <h3>No tasks</h3>
+    }
+    else
+    {
+        <table data-toggle="table" data-classes="table table-condensed" data-striped="true" data-sort-name="item-id" data-sort-order="asc"
+               class="task-list">
+            <tr>
+                <td>Name</td>
+                <td>Comments</td>
+                <td>Weight</td>
+                <td>&nbsp;</td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td data-field="item-name">@item.Name</td>
+                    <td data-field="item-comments">@item.Comments</td>
+                    <td data-field="item-weight">@item.Weight</td>
+                    <td data-field="details-link"> <button type="button" onclick="window.location = '/ScrumTask/Details/@Html.Raw(item.ID)'" class="btn btn-default btn-sm">Details</button> </td>
+                </tr>
+            }
+        </table>
+    }
+    
+</div>

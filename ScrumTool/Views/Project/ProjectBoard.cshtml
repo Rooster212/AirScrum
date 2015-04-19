@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model List<ScrumTool.Objects.ProjectBacklogItem>
+@using ScrumTool.Logic
+@using ScrumTool.Objects
+@{
+    ViewBag.Title = "Backlog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="../../Scripts/ProjectBoard.js" type="text/javascript"></script>
+
+<div id="top-area">
+    <h2>Project Backlog - @ViewBag.ProjectTitle</h2>
+    <div class="btn-group btn-group-sm">
+        @Html.ActionLink("Backlog", "ProjectBacklog", "Project", new {id = ViewBag.ProjectID}, new {@class = "btn btn-default"})
+        @Html.ActionLink("Add Item", "Create", "BacklogItem", new {id = ViewBag.ProjectID}, new {@class = "btn btn-default"})
+        @Html.ActionLink("Modify Project", "Edit", "Project", new {id = ViewBag.ProjectID}, new {@class = "btn btn-default"})
+    </div>
+</div>
+<div id="bottom-area">
+    <div id="scrum-board">
+        <div id="board-left" class="board-area" data-state="0">
+            <h3>Not Started</h3>
+            @foreach (var item in Model.Where(i => i.State == ProjectBacklogItem.BacklogItemState.NotStarted))
+            {
+                Html.RenderPartial("_BacklogItemBox", item);
+            }
+        </div>
+        <div id="board-middle" class="board-area" data-state="1">
+            <h3>In Progress</h3>
+            @foreach (var item in Model.Where(i => i.State == ProjectBacklogItem.BacklogItemState.InProgress))
+            {
+                Html.RenderPartial("_BacklogItemBox", item);
+            }
+        </div>
+        <div id="board-right" class="board-area" data-state="2">
+            <h3>Done</h3>
+            @foreach (var item in Model.Where(i => i.State == ProjectBacklogItem.BacklogItemState.Complete))
+            {
+                Html.RenderPartial("_BacklogItemBox", item);
+            }
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_Context_Backlog")

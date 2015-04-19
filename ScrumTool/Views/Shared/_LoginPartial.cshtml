@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <div class="dropdown">
+                    <a href="#" class="btn btn-default" data-toggle="dropdown" id="login-partial-button">
+                        <span id="username">@User.Identity.GetUserName()</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="login-partial-button">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="user-settings-link">Settings</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="manage-user-link">Change Password</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+<script>
+    $('#login-partial-button').dropdown();
+    $('#manage-user-link').click(function() {
+        location.href = "/Account/Manage";
+    });
+    $('#user-settings-link').click(function () {
+        location.href = "/Settings";
+    });
+</script>

@@ -1,0 +1,139 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Changelog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="changelog-accordion">
+    <h3>
+        <span class="fa fa-plus-circle"></span>     Changelog 12/04/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>Fixed site CSS to have proper theme and fixed couple of minor visual bugs</li>
+        </ul>
+    </div>
+    <h3>
+        <span class="fa fa-plus-circle"></span>     Changelog 18/03/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>You can now add teams and users to projects</li>
+            <li><i class="fa-li fa fa-terminal"></i>Fixed issues with projects when submitting that there are no assigned teams</li>
+            <li><i class="fa-li fa fa-terminal"></i>Fixed issues with empty roles when submitting that there are no assigned roles to users</li>
+            <li><i class="fa-li fa fa-terminal"></i>Fixed issues with empty teams when submitting that there are no assigned users</li>
+        </ul>
+    </div>
+    <h3>
+        <span class="fa fa-plus-circle"></span>     Changelog 17/03/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>Added admin page to show users and roles</li>
+            <li><i class="fa-li fa fa-terminal"></i>Bootstrap dialogs can now load partials from the server</li>
+            <li><i class="fa-li fa fa-desktop"></i>Administrators can add users to roles</li>
+            <li><i class="fa-li fa fa-desktop"></i>Administrators can add users to teams</li>
+        </ul>
+    </div>
+    <h3>
+        <span class="fa fa-plus-circle"></span>     Changelog 09/03/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>Changed logo</li>
+            <li><i class="fa-li fa fa-terminal"></i>Authorization backend has been structured</li>
+            <li><i class="fa-li fa fa-database"></i>New database layout for roles</li>
+            <li><i class="fa-li fa fa-desktop"></i>Login partial [top right] has been modified for better use of screen space and settings menu</li>
+            <li><i class="fa-li fa fa-desktop"></i>Added favicon</li>
+            <li><i class="fa-li fa fa-terminal"></i>You can now add yourself to teams and make yourself an admin on the settings page (temporary)</li>
+            <li><i class="fa-li fa fa-desktop"></i>Changed some button locations</li>
+            <li><i class="fa-li fa fa-database"></i>Changed database seed method to make roles if they don't exist (Admin, ScrumMaster, ProductOwner, Developer)</li>
+            <li><i class="fa-li fa fa-desktop"></i>Homepage now shows projects you have access to, not all projects (unless you are an Admin)</li>
+            <li><i class="fa-li fa fa-terminal"></i>Editing tasks now works (it didn't before!)</li>
+            <li><i class="fa-li fa fa-desktop"></i>Editing tasks weight now has a slider that is locked to the correct values for Scrum</li>
+            <li><i class="fa-li fa fa-desktop"></i>Added jQuery UI CSS which was missing - some styling needed throughout</li>
+        </ul>
+    </div>
+    <h3>
+        <span class="fa fa-plus-circle"></span>     Changelog 04/03/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>Changed to lighter theme</li>
+            <li><i class="fa-li fa fa-terminal"></i>Added new Config js file</li>
+            <li><i class="fa-li fa fa-desktop"></i>Modified project backlog to have task list available underneath backlog items (seperate ajax call)</li>
+            <li><i class="fa-li fa fa-desktop"></i>Swapped some buttons around in views</li>
+            <li><i class="fa-li fa fa-desktop"></i>Flip view on backlog board now activates on click</li>
+        </ul>
+    </div>
+
+    <h3><span class="fa fa-plus-circle"></span>     Changelog 03/03/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>Changed board view to use new "Options view" for modification of tasks</li>
+        </ul>
+    </div>
+    <h3><span class="fa fa-plus-circle"></span>     Changelog 02/03/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-terminal"></i>Board view for Backlog Items now uses jQuery for touch compatibility</li>
+            <li><i class="fa-li fa fa-desktop"></i>Added right click context menu to Backlog Board view</li>
+        </ul>
+    </div>
+    <h3><span class="fa fa-plus-circle"></span>     Changelog 01/03/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>Changed logo</li>
+            <li><i class="fa-li fa fa-database"></i>Priority can now be changed in the Backlog view</li>
+            <li><i class="fa-li fa fa-terminal"></i>Right Click context menu available on the backlog items in the backlog view</li>
+            <li><i class="fa-li fa fa-desktop"></i>Added <a href="http://touchpunch.furf.com/">jQuery UI Touch Punch</a> library</li>
+        </ul>
+    </div>
+    <h3><span class="fa fa-plus-circle"></span>     Changelog 17/02/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>Added a new backlog view (doesn't do anything functionality wise yet)</li>
+            <li><i class="fa-li fa fa-database"></i>Moved database to use Code First for compatibility with some cool methods in C#</li>
+        </ul>
+    </div>
+    <h3><span class="fa fa-plus-circle"></span>     Changelog 13/02/2015
+    </h3>
+    <div>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-desktop"></i>Changed homepage layout to better suit mobile devices & suit</li>
+            <li><i class="fa-li fa fa-terminal"></i>Password requirements loosened (no special characters required anymore)</li>
+            <li><i class="fa-li fa fa-terminal"></i>Implemented Font-Awesome (icons on left of this changelog)</li>
+        </ul>
+    </div>
+    <h3><span class="fa fa-plus-circle"></span>     Changelog 12/02/2015
+    </h3>
+    <div>
+        <ul>
+            <li>Tasks can now be viewed in detail, and edited</li>
+            <li>Changed some behind the scenes CSHTML to better adhere to Razor syntax</li>
+            <li>Changelog page now added to be visible</li>
+        </ul>
+    </div>
+    <h3><span class="fa fa-plus-circle"></span>     Changelog 10/02/2015
+    </h3>
+    <div>
+        <ul>
+            <li>Initial deployment to <a href="http://scrum.rooster212.com/">http://scrum.rooster212.com/</a> </li>
+            <li>Drag and drop functionality works for Product Backlog board </li>
+            <li>Overhauled buttons to work correctly across pages </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#changelog-accordion").accordion({
+            heightStyle: "content"
+        });
+    });
+</script>

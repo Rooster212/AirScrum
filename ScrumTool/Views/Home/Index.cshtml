@@ -1,0 +1,10 @@
+﻿@using WebGrease.Css.Extensions
+@model IEnumerable<ScrumTool.Database.Project>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.PageTitle</h2>
+
+@Html.Partial("_ProjectSummaryList", Model)
+@*@Html.Partial("_ScrumPartial")*@

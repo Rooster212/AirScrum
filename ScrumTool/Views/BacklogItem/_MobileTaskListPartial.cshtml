@@ -1,0 +1,19 @@
+﻿@model ICollection<ScrumTool.Database.ScrumTask>
+<div id="mobile-task-list">
+    @if (Model.Count == 0)
+    {
+        <h3>No tasks</h3>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <div class="task-box" id="@item.ID">
+                <h4 class="task-name">@item.Name</h4>
+                <p class="task-count">@item.Weight</p>
+                <br/>
+                <p class="comment-para">@item.Comments</p>
+            </div>
+        }
+    }
+</div>

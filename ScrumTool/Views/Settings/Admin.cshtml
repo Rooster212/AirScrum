@@ -1,0 +1,50 @@
+﻿@model List<ScrumTool.Database.AspNetUser>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Admin";
+}
+
+<h3>User Management</h3>
+<div>
+    <table data-toggle="table" data-classes="table table-condensed" data-striped="true" id="admin-users-table">
+        <tr>
+            <td>
+                User
+            </td>
+            <td>
+                Role(s)
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        @if (Model.Count == 0)
+        {
+        }
+        else
+        {
+            foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        @user.UserName
+                    </td>
+                    <td>
+                        @foreach (var role in user.AspNetRoles)
+                        {
+                            @Html.Raw(role.Name)
+                            <br/>
+                        }
+                    </td>
+                    <td class="modify-roles-col">
+                        <button class="btn btn-default btn-sm modify-roles-button" data-url="@Url.Action("UserGroups", new {username = user.UserName})" data-username="@user.UserName">
+                            Modify Roles
+                        </button>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
+<script src="~/Scripts/ManageUsers.js" type="text/javascript"></script>

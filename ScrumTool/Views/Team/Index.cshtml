@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ScrumTool.Database.Team>
+
+@{
+    ViewBag.Title = "Teams";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Teams</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create", new { }, new { @class = "btn btn-default btn-sm" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <div class="btn-group btn-group-sm">
+                    <button type="button" data-id="@item.ID" class="btn team-button-edit btn-default">Edit</button>
+                    <button type="button" data-id="@item.ID" class="btn team-button-details btn-default">Details</button>
+                    <button type="button" data-id="@item.ID" class="btn team-button-delete btn-default">Delete</button>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<script>
+    $(".team-button-edit").each(function() {
+        $(this).click(function() {
+            window.location = "/Team/Edit/"+ $(this).attr("data-id");
+        });
+    });
+    $(".team-button-details").each(function() {
+        $(this).click(function () {
+            window.location = "/Team/Details/" + $(this).attr("data-id");
+        });
+    });
+    $(".team-button-delete").each(function() {
+        $(this).click(function () {
+            window.location = "/Team/Delete/" + $(this).attr("data-id");
+        });
+    });
+</script>

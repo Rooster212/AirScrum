@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="3227a470-9618-4c14-a125-7eacef1bdbb1"
+  name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="6a43a17c-4185-4c68-a6b4-e0ab3d1992e4"
+        name="Developer"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="4e776816-365f-4b84-ba24-f7d984468917">
+            <useCaseMoniker
+              Id="b7f87235-6c6d-44e1-b58f-be8d339f485d"
+              LastKnownName="Add Backlog Items"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="79b87c8e-decc-4f1b-9646-112eb6748644">
+            <useCaseMoniker
+              Id="c39d8c84-208f-46fe-9b0c-c6d33b915ea0"
+              LastKnownName="See Scrum Board"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="2a90b3ec-0dd7-496e-bf9d-411638b574e6">
+            <useCaseMoniker
+              Id="81eccb72-babb-4caf-8ce4-d1a0b1410b61"
+              LastKnownName="Burndown Charts"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="f794923c-1722-471e-8fa4-b7e1ce9002ee">
+            <useCaseMoniker
+              Id="f9636b50-3b02-4e5b-8df9-4ec5bae1fdf5"
+              LastKnownName="Assign Backlog Items to Team Members"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="5a0eb311-d687-4f66-aaef-38c738f6cd7e">
+            <useCaseMoniker
+              Id="25cce84e-5d5c-417b-beaa-65bb1912c116"
+              LastKnownName="Add Tasks to Backlog Items"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="69414bff-7834-463e-b070-b77a9a2f5010"
+        name="Product Owner"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="433bb0de-a7ba-4cbd-aea2-7b67f525f5d1">
+            <useCaseMoniker
+              Id="b7f87235-6c6d-44e1-b58f-be8d339f485d"
+              LastKnownName="Add Backlog Items"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="da753b95-f956-4aa0-b72b-e0abc8d15f78">
+            <useCaseMoniker
+              Id="c39d8c84-208f-46fe-9b0c-c6d33b915ea0"
+              LastKnownName="See Scrum Board"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="929afff7-e20a-40b2-bae1-4c3a605d2061">
+            <useCaseMoniker
+              Id="0519e785-5168-4b10-af79-21180d0c35b8"
+              LastKnownName="Prioritise Backlog Items"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="80ee8048-c763-40f7-b6e1-a3b64c27c63b">
+            <useCaseMoniker
+              Id="81eccb72-babb-4caf-8ce4-d1a0b1410b61"
+              LastKnownName="Burndown Charts"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="591aa471-dfff-4a1f-94d8-b3f52d63b716">
+            <useCaseMoniker
+              Id="ffa45751-cffd-4741-9cb4-50b555296e88"
+              LastKnownName="Access Reports"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="22a81dbb-66f7-4308-9da4-e9cdbed4c83b">
+            <useCaseMoniker
+              Id="64681f42-74e1-4c32-841f-dd18351fd1fd"
+              LastKnownName="Mark Items as Complete"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="4c0bf64d-8d6c-47b1-861e-74350e96bd6c"
+        name="Scrum Master"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="0152e56b-b149-4d18-bbf0-0fbaebfd25c8">
+            <useCaseMoniker
+              Id="b7f87235-6c6d-44e1-b58f-be8d339f485d"
+              LastKnownName="Add Backlog Items"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="648e3d6e-f6d4-425b-b4f2-edac9eab661e">
+            <useCaseMoniker
+              Id="c39d8c84-208f-46fe-9b0c-c6d33b915ea0"
+              LastKnownName="See Scrum Board"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="20960758-86ab-4d97-b1cf-1da116ef7ec4">
+            <useCaseMoniker
+              Id="81eccb72-babb-4caf-8ce4-d1a0b1410b61"
+              LastKnownName="Burndown Charts"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="076f93d0-08db-4c5f-bec5-fe0d83f5af3d">
+            <useCaseMoniker
+              Id="ffa45751-cffd-4741-9cb4-50b555296e88"
+              LastKnownName="Access Reports"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="83215799-f8db-4eab-9c6e-3af1bfea052e">
+            <useCaseMoniker
+              Id="f9636b50-3b02-4e5b-8df9-4ec5bae1fdf5"
+              LastKnownName="Assign Backlog Items to Team Members"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="b2869e89-a21e-4483-9388-87de768c1083">
+            <useCaseMoniker
+              Id="64681f42-74e1-4c32-841f-dd18351fd1fd"
+              LastKnownName="Mark Items as Complete"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="a0585a13-d5d5-45d6-8458-2be48f076241">
+            <useCaseMoniker
+              Id="63b0d3d7-4894-49c2-bcbd-8d6473ec2452"
+              LastKnownName="Add New Projects"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b7f87235-6c6d-44e1-b58f-be8d339f485d"
+        name="Add Backlog Items"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0519e785-5168-4b10-af79-21180d0c35b8"
+        name="Prioritise Backlog Items"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="25cce84e-5d5c-417b-beaa-65bb1912c116"
+        name="Add Tasks to Backlog Items"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c39d8c84-208f-46fe-9b0c-c6d33b915ea0"
+        name="See Scrum Board"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="81eccb72-babb-4caf-8ce4-d1a0b1410b61"
+        name="Burndown Charts"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ffa45751-cffd-4741-9cb4-50b555296e88"
+        name="Access Reports"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f9636b50-3b02-4e5b-8df9-4ec5bae1fdf5"
+        name="Assign Backlog Items to Team Members"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="64681f42-74e1-4c32-841f-dd18351fd1fd"
+        name="Mark Items as Complete"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="33149ce8-38ab-480f-91ae-dcc4610c141f"
+        name="See Bug Reports"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="63b0d3d7-4894-49c2-bcbd-8d6473ec2452"
+        name="Add New Projects"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

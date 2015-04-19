@@ -1,0 +1,96 @@
+﻿
+@using Microsoft.Ajax.Utilities
+@model ScrumTool.Database.Project
+
+<div id="manage-user-page">
+    <h3>
+        Manage Project Teams
+    </h3>
+    <div id="manage-user-drag-area">
+        <div class="manage-project-team-area" id="manage-team-assigned-project">
+            <h4>Teams in Project</h4>
+            @foreach (var item in Model.Teams) // List<AspNetUser>
+            {
+                <div class="team-container">
+                    @item.Name
+                    <span class="team-id">@item.ID</span>
+                </div>
+            }
+        </div>
+        <div class="manage-project-team-area" id="manage-team-not-assigned-project">
+            <h4>Available other teams</h4>
+            @if (ViewBag.AllOtherTeams != null)
+            {
+                foreach (var item in ViewBag.AllOtherTeams) // List<AspNetUser>
+                 {
+                     <div class="team-container">
+                         @item.Name
+                         <span class="team-id">@item.ID</span>
+                     </div>
+                 }
+            }
+        </div>
+    </div>
+    <hr/>
+    <h3>
+        Manage Project Users
+    </h3>
+    <div id="manage-user-drag-area">
+        <div class="manage-project-user-area" id="manage-user-assigned-project">
+            <h4>Individual Users in Project</h4>
+            @foreach (var item in Model.Users) // List<AspNetUser>
+            {
+                <div class="user-container">
+                    @item.UserName
+                </div>
+            }
+        </div>
+        <div class="manage-project-user-area" id="manage-user-not-assigned-project">
+            <h4>Available other users</h4>
+            @if (ViewBag.AllOtherUsers != null)
+            {
+                foreach (var item in ViewBag.AllOtherUsers) // List<AspNetUser>
+                 {
+                     <div class="user-container">
+                         @item.UserName
+                     </div>
+                 }
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".user-container, .team-container").draggable({
+        appendTo: "body",
+        revert: "invalid",
+        containment: "document",
+        cursor: "move"
+    });
+
+    $(".manage-project-user-area").droppable({
+        accept: ".user-container",
+        tolerance: "pointer",
+        greedy: true,
+        activeClass: "custom-state-active",
+        hoverClass: "ui-state-highlight",
+        drop: function (event, ui) {
+            var $draggable = ui.draggable;
+            $draggable.detach().css({ top: 0, left: 0 }).appendTo(event.target);
+            $(document).remove($draggable);
+        }
+    });
+
+    $(".manage-project-team-area").droppable({
+        accept: ".team-container",
+        tolerance: "pointer",
+        greedy: true,
+        activeClass: "custom-state-active",
+        hoverClass: "ui-state-highlight",
+        drop: function (event, ui) {
+            var $draggable = ui.draggable;
+            $draggable.detach().css({ top: 0, left: 0 }).appendTo(event.target);
+            $(document).remove($draggable);
+        }
+    });
+</script>

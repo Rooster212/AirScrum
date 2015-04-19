@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Settings</h2>
+
+<div id="roles-partial">
+    <h3>User Roles</h3>
+    <div class="btn-group">
+        <button type="button" id="make-self-admin" class="btn btn-default">Make Self Admin</button>
+    </div>
+    <table data-toggle="table" data-classes="table table-condensed" data-striped="true" id="settings-role-table">
+        @if (ViewBag.UserRoles != null && ViewBag.UserRoles.Count != 0)
+        {
+            <tr>
+                <td>Role</td>
+            </tr>
+            foreach (var role in ViewBag.UserRoles)
+            {
+                <tr>
+                    <td>
+                        @role.Name
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td>
+                    <h3>No Roles configured</h3>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<script src="~/Scripts/Settings.js" type="text/javascript"></script>

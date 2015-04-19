@@ -1,0 +1,250 @@
+/* If SASS not compiling, clear this folder and restart VS  %AppData%\Local\Microsoft\VisualStudio\12.0\ComponentModelCache */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px; }
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+  max-width: 280px; }
+
+#top-area {
+  height: auto;
+  /*border: 2px solid white;*/
+  margin: 5px; }
+
+.scrum-board {
+  width: 100%; }
+
+.board-area {
+  width: 33%;
+  height: auto;
+  min-height: 600px;
+  border: 1px solid #999999;
+  display: inline-block;
+  /* This allows the div elements to be inline with each other */ }
+
+.board-area h3 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.backlog-item,
+.task-box {
+  height: 80px;
+  width: 97.1%;
+  margin: 5px;
+  background-color: #5bc0de;
+  display: table;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -webkit-perspective: 1000;
+  perspective: 1000; }
+
+/* flip the pane when flip class is applied */
+.backlog-item .flip {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+/* flip speed goes here */
+.flipper {
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative; }
+
+.front, .back {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg); }
+
+/* back, initially hidden pane */
+.back {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+.rear-btn-group {
+  position: absolute;
+  display: block;
+  width: 100%;
+  margin: 5px; }
+  .rear-btn-group .rear-button {
+    width: 32.45%;
+    height: 40px;
+    padding-top: 7px;
+    border: 10px; }
+
+#mobile-task-list {
+  display: none; }
+
+.backlog-item:hover, .task-box:hover {
+  cursor: pointer; }
+
+.backlog-item h4 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0.2em; }
+
+.task-name {
+  float: left;
+  margin: 7px; }
+
+.task-count {
+  float: right;
+  margin-top: 0.1em;
+  margin-right: 0.5em;
+  margin-bottom: 0.1em; }
+
+.back-details-container {
+  height: auto;
+  width: auto; }
+
+.comment-para {
+  margin: 10px 5px 5px; }
+
+.cancel-button {
+  background-color: #dc143c; }
+
+.project-summary-box {
+  border-radius: 5px;
+  border: 1px solid #008cba;
+  padding: 5px;
+  margin: 10px; }
+  .project-summary-box h3, .project-summary-box h4, .project-summary-box a h4 {
+    margin: 10px; }
+
+#sortable-project-backlog {
+  border: 1px solid #4e5d6c;
+  border-radius: 4px;
+  width: 99.5%;
+  min-height: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0 0 0;
+  margin-right: 10px; }
+  #sortable-project-backlog li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 99%;
+    border: 1px solid #5bc0de;
+    border-radius: 4px; }
+    #sortable-project-backlog li span {
+      padding: 3px; }
+  #sortable-project-backlog .backlog-item-accordion h3 {
+    width: 100%;
+    font-size: 80%; }
+
+.context-menu-icon {
+  margin-right: 5px; }
+
+.backlog-sort-placeholder {
+  border: 1px solid white;
+  background-color: #5bc0de;
+  width: 99% !important; }
+
+#scrum-logo-header {
+  width: 68px;
+  margin: 5px; }
+
+.backlog-item-removed {
+  display: none; }
+
+.backlog-item-comments {
+  font-size: 15px; }
+
+#help-area h4 {
+  margin-top: 2px;
+  margin-bottom: 12px; }
+  #help-area h4 span {
+    padding: 5px; }
+
+#team-user-list {
+  margin: 5px; }
+
+#roles-partial .bootstrap-table {
+  width: 200px;
+  margin: 5px; }
+
+#weight-slider {
+  width: 280px;
+  margin: 10px 10px 0 0; }
+
+.manage-user-role-area, .manage-user-team-area,
+.manage-project-team-area, .manage-project-user-area {
+  width: 49%;
+  display: inline-table;
+  height: auto;
+  min-height: 200px; }
+
+.manage-project-team-area .team-container .team-id {
+  display: none; }
+
+@media (min-width: 631px) and (max-width: 1199px) {
+  .board-area {
+    width: 32.6%;
+    height: auto;
+    display: inline-block;
+    /* This allows the div elements to be inline with each other */ }
+
+  #mobile-task-list {
+    display: none; } }
+@media (min-width: 601px) and (max-width: 630px) {
+  .board-area {
+    width: 32%; }
+
+  #mobile-task-list {
+    display: none; }
+
+  #bottom-area {
+    width: auto;
+    height: auto;
+    margin-right: 20%; } }
+@media (max-width: 600px) {
+  .board-area {
+    width: 100%;
+    height: auto;
+    min-height: 200px; }
+
+  #mobile-task-list {
+    display: block; }
+
+  #bottom-area {
+    width: auto;
+    height: auto;
+    margin-right: 20%; }
+
+  #task-list-large {
+    display: none; } }
+
+/*# sourceMappingURL=Site.css.map */
