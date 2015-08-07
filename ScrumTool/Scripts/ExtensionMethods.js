@@ -1,7 +1,7 @@
 ﻿(function ($, window) {
 
     $.fn.contextMenu = function (settings) {
-
+        // this is a test
         return this.each(function () {
 
             // Open context menu
